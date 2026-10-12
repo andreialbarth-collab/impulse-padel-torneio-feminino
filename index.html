@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101b17">
+  <title>Impulse Padel BVB | Torneio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-mark">IP</div>
+  <div><div class="eyebrow">IMPULSE PADEL BVB</div><h1>Gestor de torneio</h1></div>
+  <span class="pill">16 jogadores · 5 rodadas</span>
+</header>
+<main>
+  <section class="hero">
+    <div><p class="eyebrow">FORMATO FUTEBOLIZADO</p><h2>Duplas equilibradas.<br><em>Jogos mais competitivos.</em></h2>
+    <p class="sub">Sorteio aleatório nas duas primeiras rodadas e nivelamento por ranking a partir da terceira.</p></div>
+    <div class="hero-stats"><div><strong>15 min</strong><span>por jogo</span></div><div><strong>2</strong><span>quadras</span></div><div><strong>14h–18h</strong><span>previsão</span></div></div>
+  </section>
+  <nav class="tabs" aria-label="Seções">
+    <button class="tab active" data-tab="torneio">Torneio</button><button class="tab" data-tab="jogadores">Jogadores</button><button class="tab" data-tab="classificacao">Classificação</button>
+  </nav>
+  <section id="torneio" class="panel active">
+    <div class="section-head"><div><p class="eyebrow">CENTRAL DO TORNEIO</p><h2>Rodadas e placares</h2></div><div class="actions"><button id="newTournament" class="btn btn-quiet">Novo sorteio</button><button id="generate" class="btn btn-primary">Gerar torneio</button></div></div>
+    <div class="notice"><span>ⓘ</span><div><strong>Como funciona</strong><p>Rodadas 1 e 2 são totalmente aleatórias. A partir da rodada 3, as duplas são niveladas pelo ranking individual de cada lado. Os confrontos são embaralhados e o sistema tenta evitar a repetição do confronto exato da rodada anterior.</p></div></div>
+    <div id="rounds" class="rounds"></div>
+  </section>
+  <section id="jogadores" class="panel">
+    <div class="section-head"><div><p class="eyebrow">LISTA DE PARTICIPANTES</p><h2>Configure os jogadores</h2></div><button id="savePlayers" class="btn btn-primary">Salvar jogadores</button></div>
+    <p class="muted">Informe 8 jogadores de direita e 8 de esquerda. Os nomes podem ser alterados antes de gerar o torneio.</p>
+    <div class="player-columns"><div class="player-box"><h3><span class="dot green"></span> Direitas <small>8 jogadores</small></h3><div id="rightInputs" class="player-inputs"></div></div><div class="player-box"><h3><span class="dot orange"></span> Esquerdas <small>8 jogadores</small></h3><div id="leftInputs" class="player-inputs"></div></div></div>
+  </section>
+  <section id="classificacao" class="panel">
+    <div class="section-head"><div><p class="eyebrow">RANKING INDIVIDUAL</p><h2>Classificação</h2></div><span class="pill">Atualizada pelos placares</span></div>
+    <div class="ranking-columns"><div class="ranking-box"><h3><span class="dot green"></span> Direitas</h3><div id="rightRanking"></div></div><div class="ranking-box"><h3><span class="dot orange"></span> Esquerdas</h3><div id="leftRanking"></div></div></div>
+    <p class="muted small">Desempate: 1) pontos de classificação (vitórias/empates); 2) saldo de pontos; 3) pontos feitos.</p>
+  </section>
+  <footer><span>Impulse Padel BVB</span><span>Um jogo por jogador em cada rodada · 5 jogos por jogador</span></footer>
+</main>
+<div id="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
